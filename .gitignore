@@ -131,3 +131,6 @@ dmypy.json
 # Model files shouldn't be included in this
 *.air
 *.h5
+
+# data directory shouldn't be included either
+brain_tumor_dataset/
