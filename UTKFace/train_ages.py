@@ -59,13 +59,12 @@ def build_model():
     x = tf.keras.layers.Flatten()(x)
     for _ in range(3):
         x = tf.keras.layers.Dense(256, activation = 'relu')(x)
-    output_layer = tf.keras.layers.Dense(5, activation = 'softmax')(x)
+    output_layer = tf.keras.layers.Dense(1, activation = 'relu')(x)
 
     model = tf.keras.models.Model(input_layer, output_layer)
     model.compile(
-        loss = 'sparse_categorical_crossentropy',
-        optimizer = 'adam',
-        metrics = ['accuracy']
+        loss = 'mse',
+        optimizer = 'adam'
     )
     return model
 
@@ -95,6 +94,7 @@ def main(directory):
         min_delta = 0.02
     )
     model.fit(train_dataset, epochs = 100, validation_data = test_dataset, callbacks = [callback])
+    model.save('age_model.h5')
 
 if __name__ == '__main__':
     main()
