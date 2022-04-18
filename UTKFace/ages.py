@@ -35,7 +35,7 @@ def build_model():
         3,
         padding = 'same',
         activation = 'relu'
-    )(input_layer)
+    )(x)
     x = tf.keras.layers.Conv2D(
         256,
         3,
@@ -48,7 +48,7 @@ def build_model():
         3,
         padding = 'same',
         activation = 'relu'
-    )(input_layer)
+    )(x)
     x = tf.keras.layers.Conv2D(
         256,
         3,
