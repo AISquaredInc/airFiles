@@ -58,7 +58,7 @@ def build_model():
     x = tf.keras.layers.MaxPool2D()(x)
     x = tf.keras.layers.Flatten()(x)
     for _ in range(3):
-        x = tf.keras.layers.Dense(512, activation = 'relu')(x)
+        x = tf.keras.layers.Dense(256, activation = 'relu')(x)
     output_layer = tf.keras.layers.Dense(1, activation = 'relu')(x)
 
     model = tf.keras.models.Model(input_layer, output_layer)
@@ -72,6 +72,8 @@ def build_model():
 @click.argument('directory', type = click.Path(exists = True, file_okay = False, dir_okay = True))
 def main(directory):
     model = build_model()
+    model.summary()
+    
     train_dataset = tf.keras.utils.image_dataset_from_directory(
         directory,
         batch_size = 256,
