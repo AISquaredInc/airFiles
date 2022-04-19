@@ -24,7 +24,7 @@ def main(model_file, dtype):
         label_map
     )
     config = aisquared.config.ModelConfiguration(
-        'EthnicityPredicter'
+        'EthnicityPredicter',
         harvester,
         preprocesser,
         analytic,

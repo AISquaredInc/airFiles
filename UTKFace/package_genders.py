@@ -14,7 +14,7 @@ def main(model_file, dtype):
     renderer = aisquared.config.rendering.ImageRendering()
     feedback = aisquared.config.feedback.BinaryFeedback(['male', 'female'])
     config = aisquared.config.ModelConfiguration(
-        'GenderPredicter'
+        'GenderPredicter',
         harvester,
         preprocesser,
         analytic,

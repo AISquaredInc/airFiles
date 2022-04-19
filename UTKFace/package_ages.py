@@ -14,7 +14,7 @@ def main(model_file, dtype):
     renderer = aisquared.config.rendering.ImageRendering()
     feedback = aisquared.config.feedback.RegressionFeedback()
     config = aisquared.config.ModelConfiguration(
-        'AgePredicter'
+        'AgePredicter',
         harvester,
         preprocesser,
         analytic,
