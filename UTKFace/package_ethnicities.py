@@ -16,7 +16,7 @@ def main(model_file, dtype):
         [aisquared.config.preprocessing.Resize([256, 256])]
     )
     analytic = aisquared.config.analytic.LocalModel(model_file, 'cv')
-    postprocesser = aisquared.config.postprocessing.BinaryClassification(
+    postprocesser = aisquared.config.postprocessing.MulticlassClassification(
         label_map
     )
     renderer = aisquared.config.rendering.ImageRendering()
