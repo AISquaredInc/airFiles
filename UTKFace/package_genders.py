@@ -21,7 +21,11 @@ def main(model_file, dtype):
         postprocesser,
         renderer,
         feedback
-    ).compile(dtype = dtype)
+    )
+    if dtype != 'float32':
+        config.compile(dtype = dtype)
+    else:
+        config.compile()
 
 if __name__ == '__main__':
     main()
