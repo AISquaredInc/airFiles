@@ -7,7 +7,7 @@ import click
 def main(model_file, dtype):
     harvester = aisquared.config.harvesting.ImageHarvester()
     preprocesser = aisquared.config.preprocessing.ImagePreprocessor(
-        aisquared.config.preprocessing.Resize([256, 256])
+        [aisquared.config.preprocessing.Resize([256, 256])]
     )
     analytic = aisquared.config.analytic.LocalModel(model_file, 'cv')
     postprocesser = aisquared.config.postprocessing.BinaryClassification(['male', 'female'])
