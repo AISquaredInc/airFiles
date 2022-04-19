@@ -19,7 +19,10 @@ def main(model_file, dtype):
     postprocesser = aisquared.config.postprocessing.MulticlassClassification(
         label_map
     )
-    renderer = aisquared.config.rendering.ImageRendering()
+    renderer = aisquared.config.rendering.ImageRendering(
+        thickness = '10px',
+        font_size = '10px'
+    )
     feedback = aisquared.config.feedback.MulticlassFeedback(
         label_map
     )

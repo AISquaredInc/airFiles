@@ -11,7 +11,10 @@ def main(model_file, dtype):
     )
     analytic = aisquared.config.analytic.LocalModel(model_file, 'cv')
     postprocesser = aisquared.config.postprocessing.Regression()
-    renderer = aisquared.config.rendering.ImageRendering()
+    renderer = aisquared.config.rendering.ImageRendering(
+        thickness = '10px',
+        font_size = '10px'
+    )
     feedback = aisquared.config.feedback.RegressionFeedback()
     config = aisquared.config.ModelConfiguration(
         'AgePredicter',
