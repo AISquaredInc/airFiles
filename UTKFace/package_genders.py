@@ -12,8 +12,8 @@ def main(model_file, dtype):
     analytic = aisquared.config.analytic.LocalModel(model_file, 'cv')
     postprocesser = aisquared.config.postprocessing.BinaryClassification(['male', 'female'])
     renderer = aisquared.config.rendering.ImageRendering(
-        thickness = '10px',
-        font_size = '10px'
+        thickness = '10',
+        font_size = '10'
     )
     feedback = aisquared.config.feedback.BinaryFeedback(['male', 'female'])
     config = aisquared.config.ModelConfiguration(

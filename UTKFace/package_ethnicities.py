@@ -20,8 +20,8 @@ def main(model_file, dtype):
         label_map
     )
     renderer = aisquared.config.rendering.ImageRendering(
-        thickness = '10px',
-        font_size = '10px'
+        thickness = '10',
+        font_size = '10'
     )
     feedback = aisquared.config.feedback.MulticlassFeedback(
         label_map
