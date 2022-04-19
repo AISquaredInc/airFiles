@@ -137,3 +137,6 @@ dmypy.json
 
 # data directory shouldn't be included either
 brain_tumor_dataset/
+
+# MACOS .DS_Store files
+*.DS_Store
