@@ -63,7 +63,7 @@ def build_model():
 
     model = tf.keras.models.Model(input_layer, output_layer)
     model.compile(
-        loss = 'mse',
+        loss = 'rmse',
         optimizer = 'adam'
     )
     return model
