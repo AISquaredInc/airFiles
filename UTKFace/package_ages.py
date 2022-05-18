@@ -7,7 +7,10 @@ import click
 def main(model_file, dtype):
     harvester = aisquared.config.harvesting.ImageHarvester()
     preprocesser = aisquared.config.preprocessing.image.ImagePreprocessor(
-        [aisquared.config.preprocessing.image.Resize([256, 256])]
+        [
+            aisquared.config.preprocessing.image.Resize([256, 256]),
+            aisquared.config.preprocessing.image.DivideValue(255)
+        ]
     )
     analytic = aisquared.config.analytic.LocalModel(model_file, 'cv')
     postprocesser = aisquared.config.postprocessing.Regression()
