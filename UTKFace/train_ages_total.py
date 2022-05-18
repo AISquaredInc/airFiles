@@ -86,7 +86,6 @@ def main(directory):
             label = int(f.split('_')[0])
             img = cv2.imread(os.path.join(directory, f))
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            img = img.tolist()
             images.append(img)
             labels.append(label)
         except Exception as e:
