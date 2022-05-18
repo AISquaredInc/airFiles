@@ -6,8 +6,8 @@ import click
 @click.option('--dtype', type = str, default = 'float32')
 def main(model_file, dtype):
     harvester = aisquared.config.harvesting.ImageHarvester()
-    preprocesser = aisquared.config.preprocessing.ImagePreprocessor(
-        [aisquared.config.preprocessing.Resize([256, 256])]
+    preprocesser = aisquared.config.preprocessing.image.ImagePreprocessor(
+        [aisquared.config.preprocessing.image.Resize([256, 256])]
     )
     analytic = aisquared.config.analytic.LocalModel(model_file, 'cv')
     postprocesser = aisquared.config.postprocessing.Regression()
