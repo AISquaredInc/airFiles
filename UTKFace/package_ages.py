@@ -13,7 +13,7 @@ def main(model_file, dtype):
         ]
     )
     analytic = aisquared.config.analytic.LocalModel(model_file, 'cv')
-    postprocesser = aisquared.config.postprocessing.Regression()
+    postprocesser = aisquared.config.postprocessing.Regression(1, 116)
     renderer = aisquared.config.rendering.ImageRendering(
         thickness = '10',
         font_size = '10'
