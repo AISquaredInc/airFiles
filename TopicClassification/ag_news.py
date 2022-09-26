@@ -3,7 +3,7 @@ import tensorflow as tf
 from tqdm import tqdm
 import numpy as np
 import aisquared
-import mann
+import beyondml.tflow as mann
 import json
 
 data = tfds.as_numpy(
@@ -84,17 +84,17 @@ model.fit(
 model.save('topic_classifier.h5')
 
 harvester = aisquared.config.harvesting.TextHarvester()
-preprocesser = aisquared.config.preprocessing.TextPreprocessor(
+preprocesser = aisquared.config.preprocessing.text.TextPreprocessor(
     [
-        aisquared.config.preprocessing.RemoveCharacters(),
-        aisquared.config.preprocessing.ConvertToCase(),
-        aisquared.config.preprocessing.Tokenize(),
-        aisquared.config.preprocessing.ConvertToVocabulary(
+        aisquared.config.preprocessing.text.RemoveCharacters(),
+        aisquared.config.preprocessing.text.ConvertToCase(),
+        aisquared.config.preprocessing.text.Tokenize(),
+        aisquared.config.preprocessing.text.ConvertToVocabulary(
             vocab,
             0,
             1
         ),
-        aisquared.config.preprocessing.PadSequences(
+        aisquared.config.preprocessing.text.PadSequences(
             0,
             16,
             'pre',

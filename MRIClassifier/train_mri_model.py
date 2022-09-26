@@ -44,10 +44,10 @@ train_model.fit(
 true_model.save('mri_classifier.h5')
 
 harvester = aisquared.config.harvesting.ImageHarvester()
-preprocesser = aisquared.config.preprocessing.ImagePreprocessor(
+preprocesser = aisquared.config.preprocessing.image.ImagePreprocessor(
     [
-        aisquared.config.preprocessing.Resize([256, 256]),
-        aisquared.config.preprocessing.DivideValue(255)
+        aisquared.config.preprocessing.image.Resize([256, 256]),
+        aisquared.config.preprocessing.image.DivideValue(255)
     ]
 )
 analytic = aisquared.config.analytic.LocalModel('mri_classifier.h5', 'cv')

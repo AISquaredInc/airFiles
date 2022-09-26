@@ -5,12 +5,12 @@ with open('vocab.json', 'r') as f:
     vocab = json.load(f)
 
 harvester = aisquared.config.harvesting.TextHarvester()
-preprocesser = aisquared.config.preprocessing.TextPreprocessor(
+preprocesser = aisquared.config.preprocessing.text.TextPreprocessor(
     [
-        aisquared.config.preprocessing.RemoveCharacters(),
-        aisquared.config.preprocessing.ConvertToCase(),
-        aisquared.config.preprocessing.Tokenize(split_sentences = True),
-        aisquared.config.preprocessing.ConvertToVocabulary(
+        aisquared.config.preprocessing.text.RemoveCharacters(),
+        aisquared.config.preprocessing.text.ConvertToCase(),
+        aisquared.config.preprocessing.text.Tokenize(split_sentences = True),
+        aisquared.config.preprocessing.text.ConvertToVocabulary(
             vocab,
             0,
             1
