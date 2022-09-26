@@ -15,7 +15,7 @@ preprocesser = aisquared.config.preprocessing.text.TextPreprocessor(
             0,
             1
         ),
-        aisquared.config.preprocessing.PadSequences(
+        aisquared.config.preprocessing.text.PadSequences(
             0,
             32,
             'pre',
